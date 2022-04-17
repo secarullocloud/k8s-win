@@ -1,5 +1,6 @@
 #!/bin/bash
 
+su - vagrant
 # copy the config & write it out
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config

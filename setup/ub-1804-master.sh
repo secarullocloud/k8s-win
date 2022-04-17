@@ -13,3 +13,7 @@ wget https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/k
 
 
 kubectl --kubeconfig='/etc/kubernetes/admin.conf' apply -f kube-flannel.yml
+
+# check cluster
+export KUBECONFIG=/etc/kubernetes/admin.conf
+kubectl get nodes

@@ -1,3 +1,4 @@
 # vagrant temp files
 vagrant/.vagrant/
 vagrant/.DS_Store
+vagrant/*.log
