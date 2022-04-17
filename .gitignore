@@ -1,3 +1,3 @@
 # vagrant temp files
-./vagrant/.vagrant/*
-./vagrant/.DS_Store
+vagrant/.vagrant/
+vagrant/.DS_Store
