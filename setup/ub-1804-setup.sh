@@ -27,9 +27,14 @@ apt-get install -y \
     docker-ce-cli=$DOCKER_VERSION \
     containerd.io
 
+# Cgroup drivers (https://kubernetes.io/docs/setup/production-environment/container-runtimes/#cgroup-drivers)
+# on every node exec
+echo '{"exec-opts": ["native.cgroupdriver=systemd"]}' >> /etc/docker/daemon.json
+systemctl restart docker
+
 # install Kubeadm 1.23.5 
 apt-get update
-apt-get install -y apt-transport-https ca-certificates curl
+apt-get install -y apt-transport-https
 curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
