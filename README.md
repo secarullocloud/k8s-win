@@ -2,8 +2,8 @@
 
 Scripts for setting up a local hybrid Kubernetes cluster, with a Linux master, Linux worker and Windows worker. Currently deploys:
 
-- Docker 19.03.0
-- Kubernetes 1.15.1
+- Docker 20.10.14
+- Kubernetes 1.23.5
 
 > The setup is documented here: [Getting Started with Kubernetes on Windows](https://blog.sixeyed.com/getting-started-with-kubernetes-on-windows/).
 

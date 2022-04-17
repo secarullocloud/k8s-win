@@ -8,6 +8,6 @@ SERVICE_CIDR="10.96.0.0/12"
 kubeadm init --pod-network-cidr=$POD_NETWORK_CIDR --service-cidr=$SERVICE_CIDR
 
 # install Flannel pod network
-wget https://raw.githubusercontent.com/sixeyed/k8s-win/master/setup/flannel/kube-flannel-hybrid.yaml
+wget https://raw.githubusercontent.com/secarullocloud/k8s-win/main/setup/flannel/kube-flannel-hybrid.yaml
 
 kubectl --kubeconfig='/etc/kubernetes/admin.conf' apply -f kube-flannel-hybrid.yaml
