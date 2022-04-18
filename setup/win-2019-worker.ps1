@@ -2,7 +2,7 @@ Param(
     [parameter(Mandatory = $true)] $ManagementIP
 )
 
-$KUBERNETES_VERSION="1.15.1"
+$KUBERNETES_VERSION="1.23.5"
 
 Start-Service docker  
 

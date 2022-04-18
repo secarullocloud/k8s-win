@@ -1,6 +1,7 @@
 Vagrant.configure("2") do |config|
   # config.vm.define "k8s_win_worker" do |k8s_win_worker|
   #   k8s_win_worker.vm.box = "gusztavvargadr/docker-enterprise-windows-server-core"
+  #   k8s_win_worker.vm.box = "gusztavvargadr/windows-server-2019-standard-core"
   #   k8s_win_worker.vm.box_version = "2010.1809.2203"
   #   k8s_win_worker.vm.provider "virtualbox" do |v|
   #     v.memory = 2048
