@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
     k8s_master_worker.vm.box = "ubuntu/bionic64"
     k8s_master_worker.vm.provision "shell", path: "../setup/ub-1804-setup.sh"
     k8s_master_worker.vm.provision "shell", path: "../setup/ub-1804-master.sh"
-    k8s_master_worker.vm.provision "shell", path: "../setup/ub-1804-config.sh"
+    k8s_master_worker.vm.provision "shell", path: "../setup/ub-1804-config.sh", privileged: false
     k8s_master_worker.vm.provider "virtualbox" do |v|
       v.memory = 2048
       v.cpus = 2
