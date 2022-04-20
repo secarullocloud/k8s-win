@@ -1,13 +1,24 @@
 Vagrant.configure("2") do |config|
-  # config.vm.define "k8s_win_worker" do |k8s_win_worker|
-  #   k8s_win_worker.vm.box = "gusztavvargadr/docker-enterprise-windows-server-core"
-  #   k8s_win_worker.vm.box = "gusztavvargadr/windows-server-2019-standard-core"
-  #   k8s_win_worker.vm.box_version = "2010.1809.2203"
-  #   k8s_win_worker.vm.provider "virtualbox" do |v|
+  # config.vm.define "k8s_master_worker" do |k8s_master_worker|
+  #   k8s_master_worker.vm.box = "ubuntu/bionic64"
+  #   k8s_master_worker.vm.provision "shell", path: "../setup/ub-1804-setup.sh"
+  #   k8s_master_worker.vm.provision "shell", path: "../setup/ub-1804-master.sh"
+  #   k8s_master_worker.vm.provision "shell", path: "../setup/ub-1804-config.sh", privileged: false
+  #   k8s_master_worker.vm.provider "virtualbox" do |v|
   #     v.memory = 2048
-  #     v.cpus = 1
+  #     v.cpus = 2
   #   end
   # end
+  config.vm.define "k8s_win_worker" do |k8s_win_worker|
+  #   k8s_win_worker.vm.box = "gusztavvargadr/docker-enterprise-windows-server-core"
+    k8s_win_worker.vm.box = "gusztavvargadr/windows-server-2019-standard-core"
+  #   k8s_win_worker.vm.box_version = "2010.1809.2203"
+    k8s_win_worker.vm.box_version = "1809.0.2204"
+    k8s_win_worker.vm.provider "virtualbox" do |v|
+      v.memory = 2048
+      v.cpus = 1
+    end
+  end
   # config.vm.define "k8s_lnx_worker" do |k8s_lnx_worker|
   #   k8s_lnx_worker.vm.box = "ubuntu/bionic64"
   #   k8s_lnx_worker.vm.provider "virtualbox" do |v|
@@ -15,14 +26,4 @@ Vagrant.configure("2") do |config|
   #     v.cpus = 1
   #   end
   # end
-  config.vm.define "k8s_master_worker" do |k8s_master_worker|
-    k8s_master_worker.vm.box = "ubuntu/bionic64"
-    k8s_master_worker.vm.provision "shell", path: "../setup/ub-1804-setup.sh"
-    k8s_master_worker.vm.provision "shell", path: "../setup/ub-1804-master.sh"
-    k8s_master_worker.vm.provision "shell", path: "../setup/ub-1804-config.sh", privileged: false
-    k8s_master_worker.vm.provider "virtualbox" do |v|
-      v.memory = 2048
-      v.cpus = 2
-    end
-  end
 end
